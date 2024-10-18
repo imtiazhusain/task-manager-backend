@@ -218,7 +218,7 @@ const deleteTask = async (req: Request, res: Response, next: NextFunction) => {
 
     return res.status(200).json({
       status: true,
-      taskData: task,
+      message: "Task deleted successfully",
     });
   } catch (error) {
     console.log(error);
