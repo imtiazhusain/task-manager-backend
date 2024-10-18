@@ -1,0 +1,58 @@
+create a pakage.json or you can say start node js project
+npm init
+
+
+
+install dependency as a dev dependency and all @types definitions should be install as dev dependency
+npm install -D <package-name>
+
+ts-node // phly hm ts files ko compile krty they then un ko node k help say run krty they but ts-node package key help say ap ts files ko directly run kr paty no need of compile
+
+npm install -D typescript nodemon ts-node @types/node
+
+create tsconfig file
+npx tsc --init
+
+
+initialize git 
+git init
+create a gitignore file using gitignore extension by pressing ctrl shift  p and search gitignore and type node and press enter gitignore file will be created
+
+setup eslint // es lint use kro hr project may achi chez code may issue btati
+npm init @eslint/config
+
+options 
+select "to check syntax and find problems"
+select module i select Javascript modules"Javascript modules (import/export)"
+select framework i select none "none of these"
+"do u want to use typescript select yes"
+where your code runs "node"
+what format do you want to use for config file select json because it is easy  
+
+ab q k ts use kr rhy tu kuch dependency install ka boly ka wo yes kr do 
+and then select your package manger i select npm
+
+now a file will be created after intalling dependency file name will be eslint.config.mjs
+also install eslint plugin by microsoft
+
+
+install express
+npm i express
+npm i @types/express // for express type definitions
+
+install dotenv // dotenv is built in but some times it cause problems so use package
+npm i dotenv
+npm  i @types/dotenv
+
+
+import note: PORT=3200 npm run dev // ye hm PORT env varible key value run time pr dey rhy asy dety kisi bhi env varible key value agr script run k time deni tu
+
+install mongoose
+npm i mongoose 
+npm i @types/mongoose // is key need ni hai mongoose may @types/mongoose already builtin ata hia
+
+Error Handling 
+npm i http-errors // ye bht achi library hai use kro http error create krty like user not found etc
+npm i @types/http-errors
+
+
