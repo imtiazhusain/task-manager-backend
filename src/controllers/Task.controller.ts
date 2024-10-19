@@ -51,36 +51,6 @@ const createTask = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-// const userTasks = async (req: Request, res: Response, next: NextFunction) => {
-//   try {
-//     const { status, time = "Latest" } = req.query as {
-//       status?: string;
-//       time?: string;
-//     };
-
-//     const _req = req as IAuthRequest;
-
-//     // Constructing the query object
-//     const query: ITaskQuery = {
-//       createdBy: _req._id,
-//       ...(status && { status }),
-//     };
-
-//     const sortOrder = time === "Latest" ? -1 : 1;
-
-//     const tasks = await TaskModel.find(query)
-//       .select("title status dueDate description _id")
-//       .sort({ createdAt: sortOrder });
-//     return res.status(200).json({
-//       status: true,
-//       taskData: tasks,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     return next(CustomErrorHandler.serverError());
-//   }
-// };
-
 const userTasks = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const {
@@ -161,18 +131,9 @@ const getTask = async (req: Request, res: Response, next: NextFunction) => {
 const editTask = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const params = req.params;
-    if (!params._id) {
-      return next(createHttpError(403, "Task ID is missing"));
-    }
 
     const { title, status, dueDate, description } = req.body;
 
-    // validation
-    const isValidID = mongoose.Types.ObjectId.isValid(params._id);
-
-    if (!isValidID) {
-      return next(CustomErrorHandler.invalidId("Invalid Task ID"));
-    }
     const { error } = taskValidation(req.body);
 
     if (error) {

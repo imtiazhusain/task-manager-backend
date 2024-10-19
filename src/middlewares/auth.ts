@@ -64,7 +64,6 @@ export const authorizeAccess = async (
     const task = await TaskModel.findById(params._id);
     if (!task) return next(CustomErrorHandler.notFound("Task not found"));
 
-    console.log(task);
     // Check if the user is the creator of the task
     if (task.createdBy.toString() !== userId.toString()) {
       return next(CustomErrorHandler.unAuthorized());
